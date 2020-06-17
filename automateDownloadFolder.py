@@ -17,10 +17,11 @@ EXTENSIONS['EXT_COMPACT'] = ['.zip', '.rar']
 EXTENSIONS['EXT_SCRIPT'] = ['.py']
 DIRS = ['Audio', 'Videos', 'Documents', 'Images', 'Folders', 'Others', 'Books', 'Programas', 'Compact']
 
-if not os.path.isdir('./Audio'):
-    for d in DIRS:
-        os.mkdir('./{}'.format(d))
-        print('Created the {} directory'.format(d))
+for dir in DIRS:
+    fold = './'+dir
+    if not os.path.isdir(fold):
+        os.mkdir(fold)
+        print('Created the {} directory'.format(dir))
 
 
 files = os.listdir()
