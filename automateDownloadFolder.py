@@ -1,11 +1,10 @@
-import os, shutil
+import os
+import shutil
+import getpass
 
-print(os.getcwd()) # prints the actual folder
-print(os.listdir()) # prints the files in actual folder
-directory = "C:\\Users\\carol\\Downloads" # change here to your Downloads folder
+user = getpass.getuser() #gets automatically the system user name
+directory = "C:\\Users\\{}\\Downloads".format(user)
 dir = os.chdir("{}".format(directory)) #changes the directory to what is inside the directory variable
-
-print('Currently directory: {}'.format(dir))
 
 EXTENSIONS = {}
 EXTENSIONS['EXT_AUDIO'] = ['.wav', '.mp3', '.raw', '.wma']
